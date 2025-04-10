@@ -31,6 +31,7 @@ typedef struct dlistint_s
 	struct dlistint_s *prev;
 	struct dlistint_s *next;
 } dlistint_t;
+void quick_sort(int *array, size_t size);
 void selection_sort(int *array, size_t size);
 void bubble_sort(int *array, size_t size);
 void print_array(const int *array, size_t size);
