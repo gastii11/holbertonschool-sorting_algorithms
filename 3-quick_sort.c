@@ -6,37 +6,37 @@
 */
 void quick_sort(int *array, size_t size)
 {
-	int aux, temp, j, i;
-	int low = 0, high = size - 1;
+    int aux;
+    size_t i, j, k;
+    int pivot;
 
-	if (!array || size < 2)
-		return;
+    if (array == NULL || size < 2)
+        return;
 
-	while (low < high)
-	{
-		aux = array[high];
-		i = low -1;
+    for (i = 0; i < size - 1; i++)
+    {
+        pivot = array[size - 1];
+        j = i;
 
-		for (j = low; j < high; j++)
-		{
-			if (array[j] < aux)
-			{
-				i++;
-				temp = array[i];
-				array[i] = array[j];
-				array[j] = temp;
-				print_array(array, size);
-			}
-		}
+        for (k = i; k < size - 1; k++)
+        {
+            if (array[k] <= pivot)
+            {
+                aux = array[j];
+                array[j] = array[k];
+                array[k] = aux;
+                j++;
+            }
+        }
 
-		temp = array[i + 1];
-		array[i + 1] = array[high];
-		array[high] = temp;
-		print_array(array, size);
+        aux = array[j];
+        array[j] = array[size - 1];
+        array[size - 1] = aux;
 
-		if (i + 1 < high)
-			high = i;
-		else
-			low = i + 2;
-	}
+        if (i < j)
+        {
+            quick_sort(array, j);
+            quick_sort(array + j + 1, size - j - 1);
+        }
+    }
 }
