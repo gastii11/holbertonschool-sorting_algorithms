@@ -1,7 +1,7 @@
 #include <stdlib.h>
 #include "sort.h"
 /**
- * insetion_sort_list - ordena una lista doblemente enlazada
+ * insertion_sort_list - ordena una lista doblemente enlazada
  * @list: lista
  *
  *
@@ -16,9 +16,9 @@ void insertion_sort_list(listint_t **list)
 	current = (*list)->next;
 	while (current)
 	{
-		temp=current;
+		temp = current;
 		current = current->next;
-		
+
 		while (temp->prev && temp->n < temp->prev->n)
 		{
 			temp->prev->next = temp->next;
