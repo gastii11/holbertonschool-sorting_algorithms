@@ -16,7 +16,7 @@ void quicksort_recursivo(int *array, int low, int high, size_t size)
         pivot = array[high];
         i = low;
 
-
+        /* Partición */
         for (j = low; j < high; j++)
         {
             if (array[j] < pivot)
@@ -26,23 +26,22 @@ void quicksort_recursivo(int *array, int low, int high, size_t size)
                     temp = array[i];
                     array[i] = array[j];
                     array[j] = temp;
+                    print_array(array, size);
                 }
                 i++;
             }
         }
 
-
+        /* Intercambio del pivote */
         if (i != high)
         {
             temp = array[i];
             array[i] = array[high];
             array[high] = temp;
+            print_array(array, size);
         }
 
-
-        print_array(array, size);
-
-
+        /* Llamadas recursivas */
         quicksort_recursivo(array, low, i - 1, size);
         quicksort_recursivo(array, i + 1, high, size);
     }
