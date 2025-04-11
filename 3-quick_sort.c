@@ -25,7 +25,7 @@ void quicksort_recursivo(int *array, int low, int high, size_t size)
 					temp = array[i];
 					array[i] = array[j];
 					array[j] = temp;
-
+					print_array(array, size);
 				}
 				i++;
 			}
@@ -35,7 +35,7 @@ void quicksort_recursivo(int *array, int low, int high, size_t size)
 			temp = array[i];
 			array[i] = array[high];
 			array[high] = temp;
-			print_array(array, size);
+
 		}
 
 
