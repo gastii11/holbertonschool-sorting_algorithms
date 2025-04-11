@@ -4,7 +4,7 @@
  * quicksort_recursivo - recursively applies the quick sort algorithm
  * @array: array of integers to sort
  * @low: starting index of the sub-array
- * @high: ending index of the sub-arr
+ * @high: ending index of the sub-array
  * @size: size of the full array (for printing)
  */
 void quicksort_recursivo(int *array, int low, int high, size_t size)
