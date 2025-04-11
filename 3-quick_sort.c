@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-
+#include "sort.h"
 /**
  * partition_array - partition the array using pivot
  * @array: the array to sort
@@ -12,7 +12,8 @@ int partition_array(int *array, int low, int high)
 {
     int pivot = array[high];
     int i = low - 1;
-    int temp, j;
+    int temp;
+    int j;
 
     for (j = low; j < high; j++)
     {
@@ -40,9 +41,11 @@ int partition_array(int *array, int low, int high)
  */
 void quick_sort_recursive(int *array, int low, int high)
 {
+    int pivot_index;
+
     if (low < high)
     {
-        int pivot_index = partition_array(array, low, high);
+        pivot_index = partition_array(array, low, high);
         quick_sort_recursive(array, low, pivot_index - 1);
         quick_sort_recursive(array, pivot_index + 1, high);
     }
