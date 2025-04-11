@@ -38,7 +38,6 @@ void quicksort_recursivo(int *array, int low, int high, size_t size)
 			print_array(array, size);
 		}
 
-		print_array(array, size);
 
 		quicksort_recursivo(array, low, i - 1, size);
 		quicksort_recursivo(array, i + 1, high, size);
